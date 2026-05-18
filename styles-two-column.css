@@ -1139,6 +1139,7 @@ footer p:first-child {
 
     .content-right {
         width: calc(100% - 295px) !important;
+        min-width: 0 !important;
     }
 
     /* Stats: Single Horizontal Scrollable Row */
@@ -1151,6 +1152,9 @@ footer p:first-child {
         padding-bottom: 12px !important; /* Space for scrollbar */
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
     }
 
     .stat-box {
@@ -1230,6 +1234,7 @@ footer p:first-child {
 
     .content-right {
         width: 100% !important;
+        min-width: 0 !important;
     }
 
     .stat-box h3 {
@@ -1369,6 +1374,9 @@ footer p:first-child {
         padding-bottom: 12px !important; /* Space for scrollbar */
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
     }
     
     .stat-box {
