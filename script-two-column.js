@@ -445,7 +445,7 @@ style.textContent = `
     .stat-box:hover {
         transform: translateY(-10px) scale(1.08);
         box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-        border-radius: 12px;
+        border-radius: 30% 8px 30% 8px;
     }
     
     .stat-box:hover h3 {
