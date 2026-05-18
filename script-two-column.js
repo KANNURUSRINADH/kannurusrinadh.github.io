@@ -74,7 +74,7 @@ const statsObserver = new IntersectionObserver((entries) => {
             statsObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
 const statsRow = document.querySelector('.stats-row');
 if (statsRow) {
@@ -245,10 +245,14 @@ revealElements.forEach(el => {
 const qrCode = document.querySelector('.qr-code-image');
 if (qrCode) {
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.3;
-        if (qrCode.getBoundingClientRect().top < window.innerHeight) {
-            qrCode.style.transform = `translateY(${rate}px)`;
+        if (window.innerWidth > 768) {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            if (qrCode.getBoundingClientRect().top < window.innerHeight) {
+                qrCode.style.transform = `translateY(${rate}px)`;
+            }
+        } else {
+            qrCode.style.transform = 'none';
         }
     });
 }
@@ -412,102 +416,24 @@ style.textContent = `
         margin-top: 0.5rem;
     }
     
-    /* Reduce width and improve spacing for better visual balance */
-    .stats-row {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 2.2rem;
-        margin-bottom: 2rem;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 1.5rem;
-    }
-    
-    .stat-box {
-        padding: 1.2rem 1rem;
-        min-width: 160px;
-        max-width: 180px;
-        margin: 0 auto;
-    }
-    
-    /* Keep exact desktop layout for all devices */
-    @media (max-width: 1024px) {
+    /* Reduce width and improve spacing for better visual balance on desktop */
+    @media (min-width: 1025px) {
         .stats-row {
-            grid-template-columns: repeat(6, 1fr) !important;
-            gap: 2.2rem !important;
-            max-width: 1200px !important;
-            margin: 2rem auto !important;
-            padding: 0 1.5rem !important;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2.2rem;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1.5rem;
         }
         
         .stat-box {
-            min-width: 160px !important;
-            max-width: 180px !important;
-            padding: 1.2rem 1rem !important;
-        }
-        
-        .stat-box h3 {
-            font-size: 3rem !important;
-        }
-        
-        .stat-box p {
-            font-size: 0.85rem !important;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .stats-row {
-            grid-template-columns: repeat(6, 1fr) !important;
-            gap: 2.2rem !important;
-            max-width: 1200px !important;
-            padding: 0 1.5rem !important;
-            margin: 2rem auto !important;
-            display: grid !important;
-            overflow-x: auto !important;
-        }
-        
-        .stat-box {
-            min-width: 160px !important;
-            max-width: 180px !important;
-            padding: 1.2rem 1rem !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        
-        .stat-box h3 {
-            font-size: 3rem !important;
-        }
-        
-        .stat-box p {
-            font-size: 0.85rem !important;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .stats-row {
-            grid-template-columns: repeat(6, 1fr) !important;
-            gap: 2.2rem !important;
-            max-width: 1200px !important;
-            padding: 0 1.5rem !important;
-            margin: 2rem auto !important;
-            overflow-x: auto !important;
-        }
-        
-        .stat-box {
-            min-width: 160px !important;
-            max-width: 180px !important;
-            padding: 1.2rem 1rem !important;
-        }
-        
-        .stat-box h3 {
-            font-size: 3rem !important;
-        }
-        
-        .stat-box p {
-            font-size: 0.85rem !important;
+            padding: 1.2rem 1rem;
+            min-width: 160px;
+            max-width: 180px;
+            margin: 0 auto;
         }
     }
     
