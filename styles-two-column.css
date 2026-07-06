@@ -2165,17 +2165,17 @@ html {
     padding: 1.5rem;
     border-radius: 10px;
     border: 2px solid #e9ecef;
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Ultra smooth transition */
 }
 
 .edu-item:hover .edu-content {
-    border-color: var(--gold);
-    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+    border-color: rgba(255, 184, 28, 0.7);
+    box-shadow: 0 15px 35px rgba(0, 51, 102, 0.08);
 }
 
 .edu-highlight .edu-content {
-    background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
-    border: 2px solid var(--gold);
+    background: linear-gradient(135deg, rgba(255, 184, 28, 0.03) 0%, #ffffff 100%);
+    border: 2px solid rgba(255, 184, 28, 0.5);
 }
 
 .edu-grade-circle {
@@ -2476,7 +2476,7 @@ html {
 }
 
 .edu-item:hover .edu-content {
-    transform: rotateY(2deg) rotateX(2deg);
+    transform: translateY(-4px) rotateY(1.5deg) rotateX(1.5deg);
 }
 
 /* Publication Metrics */
