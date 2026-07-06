@@ -720,4 +720,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // 4. Image Comparison Slider logic
+    const compareSlider = document.querySelector('.image-compare-slider');
+    const compareBefore = document.querySelector('.image-compare-before');
+    const compareHandle = document.querySelector('.image-compare-handle');
+    const container = document.querySelector('.image-compare-container');
+
+    if (compareSlider && compareBefore && compareHandle && container) {
+        function updateSliderWidth() {
+            const val = compareSlider.value;
+            compareBefore.style.width = `${val}%`;
+            compareHandle.style.left = `${val}%`;
+        }
+
+        function resizeImages() {
+            const containerWidth = container.offsetWidth;
+            const beforeImg = compareBefore.querySelector('img');
+            const afterImg = document.querySelector('.image-compare-after img');
+            if (beforeImg && afterImg) {
+                beforeImg.style.width = `${containerWidth}px`;
+                afterImg.style.width = `${containerWidth}px`;
+            }
+        }
+
+        compareSlider.addEventListener('input', updateSliderWidth);
+        compareSlider.addEventListener('change', updateSliderWidth);
+        window.addEventListener('resize', resizeImages);
+        
+        // Initial setup
+        resizeImages();
+        updateSliderWidth();
+        
+        // Resize observer to handle dynamic layout changes (like accordion opening)
+        if (window.ResizeObserver) {
+            const observer = new ResizeObserver(() => {
+                resizeImages();
+            });
+            observer.observe(container);
+        }
+    }
 });

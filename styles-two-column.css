@@ -2729,3 +2729,149 @@ html {
         transform: translateY(-50%) scale(1);
     }
 }
+
+/* Image Comparison Slider */
+.research-demo-container {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(255, 184, 28, 0.2);
+    width: 100%;
+}
+
+.research-demo-container h4 {
+    color: var(--navy-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.demo-description {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.image-compare-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15);
+}
+
+.image-compare-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Blur effect to simulate Low Resolution (LR) */
+.image-compare-before img {
+    filter: blur(5px) contrast(0.85);
+    image-rendering: pixelated;
+}
+
+.image-compare-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.image-compare-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Comparison Labels */
+.image-compare-label {
+    position: absolute;
+    bottom: 10px;
+    padding: 4px 8px;
+    background: rgba(0, 51, 102, 0.85);
+    border: 1px solid rgba(255, 184, 28, 0.3);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.label-before {
+    left: 10px;
+}
+
+.label-after {
+    right: 10px;
+}
+
+/* Transparent Range Input Slider */
+.image-compare-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Handle line and button */
+.image-compare-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--gold);
+    z-index: 4;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.handle-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    background: var(--navy-blue);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .image-compare-container {
+        height: 220px;
+    }
+}

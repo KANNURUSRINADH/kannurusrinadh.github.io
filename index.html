@@ -53,7 +53,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles-two-column.css?v=2.9">
+    <link rel="stylesheet" href="styles-two-column.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -477,6 +477,37 @@
                                     <li><strong>Sparse Signal Processing:</strong> Utilizing sparse representation for image restoration.</li>
                                     <li><strong>Medical Imaging:</strong> Enhancement and bias field correction for MRI data.</li>
                                 </ul>
+                                
+                                <!-- Interactive Super-Resolution Demo -->
+                                <div class="research-demo-container">
+                                    <h4>Interactive Super-Resolution Demo</h4>
+                                    <p class="demo-description">Slide left/right to compare the Low-Resolution (LR) input with the Sparse Enabled Model-based Super-Resolved (HR) output.</p>
+                                    
+                                    <div class="image-compare-container">
+                                        <!-- After Image (Super-Resolved HR) -->
+                                        <div class="image-compare-after">
+                                            <img src="images/KANNURU SRINADH.png" alt="Super-Resolved Output">
+                                            <span class="image-compare-label label-after">Super-Resolved (HR)</span>
+                                        </div>
+                                        
+                                        <!-- Before Image (Low-Resolution LR, dynamically clipped) -->
+                                        <div class="image-compare-before">
+                                            <img src="images/KANNURU SRINADH.png" alt="Low-Resolution Input">
+                                            <span class="image-compare-label label-before">Low-Resolution (LR)</span>
+                                        </div>
+                                        
+                                        <!-- Slider input overlay -->
+                                        <input type="range" min="0" max="100" value="50" class="image-compare-slider" aria-label="Compare image quality slider">
+                                        
+                                        <!-- Visual slider line/handle -->
+                                        <div class="image-compare-handle">
+                                            <div class="handle-line"></div>
+                                            <div class="handle-button">
+                                                <i class="fas fa-arrows-alt-h"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1230,7 +1261,7 @@
         </a>
     </nav>
 
-    <script src="script-two-column.js?v=2.0"></script>
+    <script src="script-two-column.js?v=2.1"></script>
 
     <!-- Service Worker Registration -->
     <script>
