@@ -1262,6 +1262,66 @@ footer p:first-child {
         box-shadow: 0 6px 20px rgba(0, 51, 102, 0.4);
     }
 
+    /* Fix mobile accordion height calculations and overlaps */
+    .accordion-item.active .accordion-content {
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 1.5rem !important;
+    }
+
+    /* Stack education timeline details on mobile/tablet viewports */
+    .edu-item {
+        padding-left: 50px !important;
+    }
+    
+    .edu-year-badge {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.8rem !important;
+    }
+    
+    .edu-degree-title {
+        font-size: 1rem !important;
+    }
+    
+    .edu-info-row {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+    }
+    
+    .edu-logo {
+        width: 70px !important;
+        height: 70px !important;
+        margin: 0 auto !important;
+    }
+    
+    .edu-text {
+        text-align: center !important;
+    }
+    
+    .edu-grade-section {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+    }
+    
+    .edu-grade-circle {
+        width: 70px !important;
+        height: 70px !important;
+        margin: 0 auto !important;
+    }
+    
+    .grade-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .grade-label {
+        font-size: 0.65rem !important;
+    }
+
+    .education-timeline-vertical::before {
+        bottom: 40px !important; /* Stop timeline line at the center of last dot */
+    }
+
     footer {
         margin-bottom: 60px !important;
     }
@@ -1529,53 +1589,6 @@ footer p:first-child {
     
     .accordion-content.active {
         padding: 1rem;
-    }
-    
-    .edu-item {
-        padding-left: 50px;
-    }
-    
-    .edu-year-badge {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.8rem;
-    }
-    
-    .edu-degree-title {
-        font-size: 1rem;
-    }
-    
-    .edu-info-row {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-    
-    .edu-logo {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto;
-    }
-    
-    .edu-text {
-        text-align: center;
-    }
-    
-    .edu-grade-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
-    }
-    
-    .edu-grade-circle {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .grade-value {
-        font-size: 1.2rem;
-    }
-    
-    .grade-label {
-        font-size: 0.65rem;
     }
     
     .btn-expand-edu {
