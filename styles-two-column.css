@@ -1213,7 +1213,7 @@ footer p:first-child {
         justify-content: center;
         color: var(--text-light);
         text-decoration: none;
-        width: 25%;
+        width: 20%;
         height: 100%;
         transition: all 0.2s;
     }

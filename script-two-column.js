@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Scroll Spying for mobile bottom nav active highlights
     function scrollSpy() {
-        const sections = ['about', 'research', 'publications', 'contact'];
+        const sections = ['about', 'education', 'publications', 'experience', 'contact'];
         const scrollPos = window.scrollY || document.documentElement.scrollTop;
         const headerOffset = 80; // buffer
         
@@ -639,7 +639,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let touchendX = 0;
         let touchendY = 0;
         
-        const sectionsList = ['about', 'research', 'publications', 'contact'];
+        const sectionsList = ['about', 'education', 'publications', 'experience', 'contact'];
         
         function shouldIgnoreSwipe(target) {
             const ignoreClasses = ['stats-row', 'academic-identity', 'timeline-container', 'table-responsive', 'math-scroll', 'carousel'];

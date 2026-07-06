@@ -53,7 +53,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles-two-column.css?v=2.8">
+    <link rel="stylesheet" href="styles-two-column.css?v=2.9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -243,7 +243,7 @@
                     <div class="accordion-container" id="publications">
 
                         <!-- Education Qualification -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="education">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
                                 <i class="fas fa-graduation-cap"></i>
                                 <h3>EDUCATION QUALIFICATION</h3>
@@ -481,7 +481,7 @@
                         </div>
 
                         <!-- Experience -->
-                        <div class="accordion-item">
+                        <div class="accordion-item" id="experience">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
                                 <i class="fas fa-briefcase"></i>
                                 <h3>EXPERIENCE</h3>
@@ -1209,16 +1209,20 @@
     <!-- Mobile Bottom Navigation Bar -->
     <nav class="mobile-bottom-nav">
         <a href="#about" class="mobile-nav-item active" data-section="about">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
+            <i class="fas fa-user"></i>
+            <span>Bio</span>
         </a>
-        <a href="#research" class="mobile-nav-item" data-section="research">
+        <a href="#education" class="mobile-nav-item" data-section="education">
             <i class="fas fa-graduation-cap"></i>
-            <span>Research</span>
+            <span>Education</span>
         </a>
         <a href="#publications" class="mobile-nav-item" data-section="publications">
             <i class="fas fa-book"></i>
             <span>Publications</span>
+        </a>
+        <a href="#experience" class="mobile-nav-item" data-section="experience">
+            <i class="fas fa-briefcase"></i>
+            <span>Experience</span>
         </a>
         <a href="#contact" class="mobile-nav-item" data-section="contact">
             <i class="fas fa-envelope"></i>
@@ -1226,7 +1230,7 @@
         </a>
     </nav>
 
-    <script src="script-two-column.js?v=1.9"></script>
+    <script src="script-two-column.js?v=2.0"></script>
 
     <!-- Service Worker Registration -->
     <script>
