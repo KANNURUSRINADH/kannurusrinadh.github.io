@@ -1,5 +1,32 @@
 // Two-Column Layout JavaScript
 
+// Page Load Progress Bar Animation
+(function() {
+    const progress = document.getElementById('page-load-progress');
+    if (progress) {
+        // Initial progress state
+        progress.style.width = '35%';
+        
+        // Update when DOM is interactive
+        document.onreadystatechange = function () {
+            if (document.readyState === "interactive") {
+                progress.style.width = '75%';
+            }
+        };
+        
+        // Complete progress when fully loaded
+        window.addEventListener('load', () => {
+            progress.style.width = '100%';
+            setTimeout(() => {
+                progress.style.opacity = '0';
+                setTimeout(() => {
+                    progress.style.display = 'none';
+                }, 400);
+            }, 300);
+        });
+    }
+})();
+
 // Live Date and Time in Navigation
 function updateDateTime() {
     const now = new Date();
