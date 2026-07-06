@@ -632,5 +632,92 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', scrollSpy);
         window.addEventListener('resize', scrollSpy);
         scrollSpy(); // Initial call
+
+        // 3. Swipe gestures to navigate tabs on mobile
+        let touchstartX = 0;
+        let touchstartY = 0;
+        let touchendX = 0;
+        let touchendY = 0;
+        
+        const sectionsList = ['about', 'research', 'publications', 'contact'];
+        
+        function shouldIgnoreSwipe(target) {
+            const ignoreClasses = ['stats-row', 'academic-identity', 'timeline-container', 'table-responsive', 'math-scroll', 'carousel'];
+            let current = target;
+            while (current && current !== document.body) {
+                if (current.classList) {
+                    for (const cls of ignoreClasses) {
+                        if (current.classList.contains(cls)) {
+                            return true;
+                        }
+                    }
+                }
+                current = current.parentElement;
+            }
+            return false;
+        }
+
+        document.addEventListener('touchstart', e => {
+            if (shouldIgnoreSwipe(e.target)) return;
+            touchstartX = e.changedTouches[0].screenX;
+            touchstartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            if (shouldIgnoreSwipe(e.target)) return;
+            touchendX = e.changedTouches[0].screenX;
+            touchendY = e.changedTouches[0].screenY;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        function handleSwipeGesture() {
+            const diffX = touchendX - touchstartX;
+            const diffY = touchendY - touchstartY;
+            
+            // Check if horizontal swipe is dominant and exceeds threshold
+            if (Math.abs(diffX) > Math.abs(diffY) * 1.5 && Math.abs(diffX) > 80) {
+                const activeItem = document.querySelector('.mobile-nav-item.active');
+                if (!activeItem) return;
+                
+                const currentSection = activeItem.getAttribute('data-section');
+                const currentIndex = sectionsList.indexOf(currentSection);
+                
+                if (currentIndex !== -1) {
+                    let nextIndex = currentIndex;
+                    if (diffX < 0) {
+                        // Swipe Left -> Next section
+                        if (currentIndex < sectionsList.length - 1) {
+                            nextIndex = currentIndex + 1;
+                        }
+                    } else {
+                        // Swipe Right -> Previous section
+                        if (currentIndex > 0) {
+                            nextIndex = currentIndex - 1;
+                        }
+                    }
+                    
+                    if (nextIndex !== currentIndex) {
+                        const targetSectionId = sectionsList[nextIndex];
+                        const targetNavItem = document.querySelector(`.mobile-nav-item[data-section="${targetSectionId}"]`);
+                        if (targetNavItem) {
+                            // Create swipe visual feedback bubble
+                            const feedbackEl = document.createElement('div');
+                            feedbackEl.className = 'swipe-feedback';
+                            feedbackEl.innerHTML = diffX < 0 ? '<i class="fas fa-chevron-right"></i>' : '<i class="fas fa-chevron-left"></i>';
+                            feedbackEl.style.top = '50%';
+                            if (diffX < 0) {
+                                feedbackEl.style.right = '20px';
+                            } else {
+                                feedbackEl.style.left = '20px';
+                            }
+                            document.body.appendChild(feedbackEl);
+                            setTimeout(() => feedbackEl.remove(), 600);
+                            
+                            targetNavItem.click();
+                        }
+                    }
+                }
+            }
+        }
     }
 });
