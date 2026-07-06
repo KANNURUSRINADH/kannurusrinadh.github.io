@@ -1279,6 +1279,13 @@ footer p:first-child {
         padding-left: 50px !important;
     }
     
+    .edu-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+        border-bottom: 1px dashed rgba(255, 184, 28, 0.2) !important;
+    }
+    
     .edu-year-badge {
         font-size: 0.75rem !important;
         padding: 0.3rem 0.8rem !important;
@@ -1286,33 +1293,51 @@ footer p:first-child {
     
     .edu-degree-title {
         font-size: 1rem !important;
+        text-align: left !important;
     }
     
     .edu-info-row {
         grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
+        gap: 1rem !important;
     }
     
     .edu-logo {
         width: 70px !important;
         height: 70px !important;
-        margin: 0 auto !important;
+        margin: 0 0 0.5rem 0 !important; /* Clean left alignment */
     }
     
     .edu-text {
-        text-align: center !important;
+        text-align: left !important; /* Align text to the left */
     }
     
     .edu-grade-section {
-        flex-direction: column !important;
+        flex-direction: row !important; /* Place grade circle and button side-by-side */
         align-items: center !important;
-        gap: 0.8rem !important;
+        justify-content: flex-start !important;
+        gap: 1.5rem !important;
+        margin-top: 0.5rem !important;
     }
     
     .edu-grade-circle {
         width: 70px !important;
         height: 70px !important;
-        margin: 0 auto !important;
+        margin: 0 !important; /* Clean left alignment */
+    }
+
+    .btn-expand-edu {
+        margin: 0 !important;
+    }
+    
+    .edu-thesis,
+    .edu-supervisors {
+        text-align: left !important; /* Align thesis and supervisors text to the left */
+        font-size: 0.85rem !important;
+        margin: 0.5rem 0 !important;
+    }
+    
+    .edu-extra-details {
+        text-align: left !important;
     }
     
     .grade-value {
