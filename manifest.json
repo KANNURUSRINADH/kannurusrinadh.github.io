@@ -1,0 +1,17 @@
+{
+  "name": "Kannuru Srinadh | Doctoral Researcher",
+  "short_name": "K. Srinadh",
+  "description": "Research portfolio of Kannuru Srinadh, Doctoral Fellow at NIT Rourkela.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#001a33",
+  "theme_color": "#003366",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/KANNURU SRINADH.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

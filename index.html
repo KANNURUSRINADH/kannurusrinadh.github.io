@@ -55,9 +55,16 @@
 
     <link rel="stylesheet" href="styles-two-column.css?v=2.3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
+    <!-- Mobile App Bar Header -->
+    <header class="mobile-app-bar">
+        <div class="mobile-app-title">KANNURU SRINADH</div>
+        <a href="mailto:srinadh.3914@gmail.com" class="mobile-app-contact-btn"><i class="fas fa-envelope"></i></a>
+    </header>
+
     <!-- Navigation Menu -->
     <nav class="navbar">
         <div class="container">
@@ -1194,7 +1201,43 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Floating Action Button for CV Download -->
+    <a href="documents/Kannuru_Srinadh_CV.pdf" download class="floating-cv-btn" title="Download CV">
+        <i class="fas fa-file-pdf"></i>
+    </a>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="#about" class="mobile-nav-item active" data-section="about">
+            <i class="fas fa-user"></i>
+            <span>Bio</span>
+        </a>
+        <a href="#research" class="mobile-nav-item" data-section="research">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Research</span>
+        </a>
+        <a href="#publications" class="mobile-nav-item" data-section="publications">
+            <i class="fas fa-book"></i>
+            <span>Papers</span>
+        </a>
+        <a href="#contact" class="mobile-nav-item" data-section="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
     <script src="script-two-column.js?v=1.4"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((reg) => console.log('Service Worker registered successfully:', reg.scope))
+                    .catch((err) => console.error('Service Worker registration failed:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -566,3 +566,71 @@ eduItems.forEach(item => {
 });
 
 console.log('✨ Education timeline enhancements loaded!');
+
+// Mobile bottom nav smooth scrolling and active state tracking (scroll spying)
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Smooth scroll for mobile bottom nav links
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const headerOffset = 55; // Height of the mobile-app-bar
+                const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 2. Scroll Spying for mobile bottom nav active highlights
+    function scrollSpy() {
+        const sections = ['about', 'research', 'publications', 'contact'];
+        const scrollPos = window.scrollY || document.documentElement.scrollTop;
+        const headerOffset = 80; // buffer
+        
+        let activeSection = null;
+        
+        for (const secId of sections) {
+            const el = document.getElementById(secId);
+            if (el) {
+                const top = el.offsetTop - headerOffset;
+                const bottom = top + el.offsetHeight;
+                if (scrollPos >= top && scrollPos < bottom) {
+                    activeSection = secId;
+                }
+            }
+        }
+        
+        // Fallback: at the bottom of the page
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 20) {
+            activeSection = 'contact';
+        }
+        // Fallback: at the top of the page
+        if (scrollPos < 50) {
+            activeSection = 'about';
+        }
+        
+        if (activeSection) {
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                if (item.getAttribute('data-section') === activeSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    }
+    
+    // Register scroll and resize listeners for mobile view
+    if (window.innerWidth <= 1024) {
+        window.addEventListener('scroll', scrollSpy);
+        window.addEventListener('resize', scrollSpy);
+        scrollSpy(); // Initial call
+    }
+});
