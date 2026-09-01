@@ -1,8 +1,8 @@
-const CACHE_NAME = 'srinadh-portfolio-v12';
+const CACHE_NAME = 'srinadh-portfolio-v13';
 const ASSETS = [
   './',
   './index.html',
-  './styles-two-column.css?v=3.2',
+  './styles-two-column.css?v=3.3',
   './script-two-column.js?v=2.3',
   './manifest.json',
   './images/KANNURU SRINADH.png',

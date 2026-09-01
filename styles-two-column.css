@@ -822,6 +822,9 @@ html {
 .badge-blue { background: var(--blue); }
 .badge-purple { background: var(--purple); }
 .badge-teal { background: #20c997; }
+.badge-orange { background: #fd7e14; }
+.badge-dark { background: #343a40; }
+.badge-yellow { background: #f5b041; color: #000; }
 
 /* Skills Icon Row Layout */
 .skills-icon-row {
