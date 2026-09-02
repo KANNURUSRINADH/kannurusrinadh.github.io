@@ -1,0 +1,404 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage[T1]{fontenc}
+\usepackage{lastpage}
+
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+  frame code={},
+  center title,
+  left=0pt,
+  right=0pt,
+  top=0pt,
+  bottom=0pt,
+  colback=gray!20,
+  colframe=white,
+  width=\dimexpr\textwidth\relax,
+  enlarge left by=-2mm,
+  boxsep=4pt,
+  arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Sections formatting
+\renewcommand{\section}[1]{%
+  \vspace{12pt}%
+  {\large\scshape\raggedright #1}%
+  \vspace{3pt}\hrule\vspace{6pt}%
+}
+
+%-------------------------
+% Custom Commands
+
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabularx}{0.98\textwidth}[t]{@{} >{\hsize=1.5\hsize}L >{\hsize=0.5\hsize}R @{}}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabularx}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabularx}{0.98\textwidth}[t]{@{} >{\hsize=1.5\hsize}L >{\hsize=0.5\hsize}R @{}}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabularx}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[3]{
+\vspace{0.5mm}\item
+  \begin{tabularx}{0.98\textwidth}[t]{@{} >{\hsize=1.5\hsize}L >{\hsize=0.5\hsize}R @{}}
+    \textbf{#1} & \textit{\footnotesize{#2}} \\
+  \end{tabularx}
+  {\footnotesize\textit{#3}}
+  \vspace{-2.4mm}
+}
+
+% New commands for Publications
+% DOI color (change here once; applies everywhere)
+\definecolor{DOIColor}{HTML}{1A73E8}
+\newcommand{\doi}[2]{\textcolor{DOIColor}{DOI: \href{#1}{#2}}}
+
+\newcommand{\publicationItem}[5]{%
+  \item \small{#1. (\textbf{#2}). #3. \textit{#4}. #5.}%
+  \vspace{-1mm}%
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={},topsep=0pt,partopsep=0pt,itemsep=6pt,parsep=0pt]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+  \textbf{\large #1}
+\end{tcolorbox}
+\vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+%---- End of Packages and Functions ------
+
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Kannuru Srinadh}
+\newcommand{\currentaffiliation}{Doctoral Fellow (PhD) \\ Department of Electronics and Communication Engineering}
+\newcommand{\university}{National Institute of Technology, Rourkela, India.}
+\newcommand{\phdthesis}{Sparse Enabled Model based Deep Learning for Multimodal Image Superresolution}
+\newcommand{\phdsupervisor}{Prof. Upendra Kumar Sahoo \& Prof. Santos Kumar Das}
+\newcommand{\phone}{7306106104}
+\newcommand{\emaila}{srinadh.3914@gmail.com}
+\newcommand{\googlescholarlink}{https://scholar.google.com/citations?user=VQD7sScAAAAJ&hl=en}
+\newcommand{\orcidlink}{https://orcid.org/0009-0005-3147-2347}
+\newcommand{\linkedinlink}{https://www.linkedin.com/in/kannuru-srinadh-56618a2b3}
+\newcommand{\githublink}{https://github.com/kannurusrinadh}
+\newcommand{\personalwebsitelink}{https://kannurusrinadh.github.io/}
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+
+%----------HEADING-----------------
+\fontfamily{cmr}\selectfont
+{
+\begin{tabularx}{\linewidth}{@{}L R@{}}
+  \parbox[t]{0.66\textwidth}{%
+    \textbf{\Huge \name} \\[2pt]
+    Doctoral Fellow (PhD) \\
+    Adaptive System Lab (ASL) \& ISDR \& Comm. Net. Lab \\
+    Department of Electronics and Communication Engineering \\
+    National Institute of Technology Rourkela, Odisha, India-769 008.
+  } &
+  \parbox[t]{0.32\textwidth}{\raggedleft
+    \footnotesize
+    \faPhone\ +91-\phone \\
+    \href{mailto:\emaila}{\faEnvelope\ \emaila} \\
+    \href{\personalwebsitelink}{\faGlobe\ Personal Website} \\
+    \href{\googlescholarlink}{\faGraduationCap\ Google Scholar} \\
+    \href{\orcidlink}{\faOrcid\ ORCID: 0009-0005-3147-2347} \\
+    \href{\linkedinlink}{\faLinkedin\ LinkedIn} \ \href{\githublink}{\faGithub\ GitHub}
+  }
+\end{tabularx}
+}
+\vspace{-1mm}
+
+%-----------RESEARCH INTERESTS-----------
+\section{\textbf{Research Interests}}
+\begin{itemize}[leftmargin=*,labelsep=1.5mm,topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+  \resumeItem{Sparse Signal Processing:}{Techniques for efficient representation and processing of signals.}
+  \resumeItem{Model-Based Deep Learning:}{Integrating traditional model-based approaches with deep learning frameworks.}
+  \resumeItem{Multimodal Image Super-Resolution:}{Enhancing image resolution using data from multiple modalities (e.g., RGB--NIR, RGB--Thermal).}
+  \resumeItem{Deep Learning \& Machine Learning Architectures:}{Developing and optimizing architectures for various AI applications.}
+  \resumeItem{Computer Vision \& Object Detection:}{Algorithms for object detection and image analysis.}
+  \resumeItem{Biomedical Image Processing:}{Applying image processing techniques to medical imaging for diagnosis and analysis.}
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{\textbf{Education}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Doctor of Philosophy (PhD) in Electronics and Communication Engineering}{CGPA: 8.58}
+      {National Institute of Technology Rourkela}{July 2022 -- Expected July 2027}
+      \resumeItemListStart
+        \item {\textbf{Thesis Title:} \phdthesis}
+        \item {\textbf{Supervisor(s):} \phdsupervisor}
+        \item {\textbf{Specialization:} Signal and Image Processing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Master of Technology (M.Tech) in Electronics and Communication Engineering}{CGPA: 8.7}
+      {Jawaharlal Nehru Technological University Kakinada}{Aug 2014 -- Oct 2016}
+      \resumeItemListStart
+        \item {\textbf{Specialization:} Systems and Signal Processing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Bachelor of Technology (B.Tech) in Electronics and Communication Engineering}{Percentage: 70.64 \%}
+      {Jawaharlal Nehru Technological University Kakinada}{Aug 2009 -- July 2013}
+
+    \resumeSubheading
+      {Intermediate (10+2)}{Percentage: 85.6 \%}
+      {Margadarsi Junior College, Gajuwaka, Visakhapatnam}{June 2007 -- March 2009}
+    \resumeSubheading
+      {Class X}{Percentage: 77 \%}
+      {Z.P.H School, Vada cheepurupalli, Visakhapatnam}{July 2006 -- March 2007}
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{\textbf{Research Experience}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Doctoral Fellow (PhD)}{Supervisor: \phdsupervisor}
+      {National Institute of Technology Rourkela}{July 2022 -- Present}
+      \resumeItemListStart
+        \item {Conducting research on Sparse-Enabled Model-Based Deep Learning for Multimodal Image Super-Resolution.}
+        \item {Developed novel deep learning architectures for multimodal sensor fusion.}
+        \item {Implementing sparse representation techniques to enhance feature extraction and reconstruction.}
+        \item {Analyzing and optimizing model-based frameworks for improved super-resolution performance.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{\textbf{Publications}}
+  \resumeItemListStart
+
+    \publicationItem{P. K. Sahu, S. Baraha, U. K. Sahoo, \textbf{K. Srinadh}, and S. K. Das}{2027}{Distributed estimation of convex event regions in wireless sensor networks using diffusion cooperation and minimum volume ellipsoids}{Ad Hoc Networks, vol. 194, 104404}{\doi{https://doi.org/10.1016/j.adhoc.2026.104404}{10.1016/j.adhoc.2026.104404}}
+
+    \publicationItem{V. Kadha, B. B. Duddeti, \textbf{K. Srinadh}, S. K. Buddepu, L. Janjanam, and K. Medhi}{2026}{From pixels to text: A deep learning survey of scene text detection and recognition}{Computers and Electrical Engineering, vol. 135, 111139}{\doi{https://doi.org/10.1016/j.compeleceng.2026.111139}{10.1016/j.compeleceng.2026.111139}}
+
+    \publicationItem{\textbf{K. Srinadh}}{2026}{Task-Aware Super-Resolution for Brain MRI: An Evaluation Framework Based on Downstream Segmentation Utility}{Computerized Medical Imaging and Graphics}{\textbf{(Submitted)}}
+
+    \publicationItem{A. Kumar, Y. D. Kumar, \textbf{K. Srinadh}, and U. K. Sahoo}{2026}{UCRS: Uncertainty-Calibrated Region Sampling for Real-Time Small Object Detection in High-Resolution Images}{Proceedings of the National Conference on Communications (NCC), Hyderabad, India, pp. 418--423}{\doi{https://doi.org/10.1109/NCC68160.2026.11479125}{10.1109/NCC68160.2026.11479125}}
+
+    \publicationItem{\textbf{K. Srinadh}, K. Ramakrishna, V. David, and G. Lakshmi}{2026}{HAD-SR: Hybrid Attention-Augmented Dictionary Learning for Unpaired Image Super-Resolution}{Proceedings of the National Conference on Communications (NCC), Hyderabad, India, pp. 84--89}{\doi{https://doi.org/10.1109/NCC68160.2026.11479114}{10.1109/NCC68160.2026.11479114}}
+
+    \publicationItem{\textbf{K. Srinadh}, K. Ramakrishna, V. David, and G. Lakshmi}{2025}{Dual Multiplicative Intrinsic Components Optimization for Enhanced MRI Bias Field Correction}{Proceedings of the 6th International Conference on Recent Advances in Information Technology (RAIT), Dhanbad, India, pp. 1--6}{\doi{https://doi.org/10.1109/RAIT65068.2025.11089089}{10.1109/RAIT65068.2025.11089089}}
+
+    \publicationItem{S. Rana, \textbf{K. Srinadh}, K. Bhagyasekhar, V. K. Kappala, and S. K. Das}{2025}{Performance Analysis of FSO Communication Under Foggy Conditions}{Proceedings of the 4th International Conference on Range Technology (ICORT), Chandipur, India, pp. 1--6}{\doi{https://doi.org/10.1109/ICORT64008.2025.11115410}{10.1109/ICORT64008.2025.11115410} \textbf{(Best Paper Award)}}
+
+    \publicationItem{\textbf{K. Srinadh}, V. David, G. Lakshmi, and K. Ramakrishna}{2024}{Unified Dictionary Training Approach for High-Resolution Image Enhancement}{Proceedings of the 4th International Conference on Artificial Intelligence and Signal Processing (AISP), Vijayawada, India, pp. 1--5}{\doi{https://doi.org/10.1109/AISP61711.2024.10870610}{10.1109/AISP61711.2024.10870610}}
+
+    \publicationItem{\textbf{K. Srinadh}, Y. D. Kumar, U. Sahoo, and S. K. Das}{2026}{QSRNet: Hybrid Quantum-Classical Learning with Variational Circuits for Enhanced Feature Representation in Image Super-Resolution}{Proceedings of the Signal Processing and Communications Engineering (SPACE)}{\textbf{(Accepted)}}
+
+    \publicationItem{Y. D. Kumar, \textbf{K. Srinadh}, and U. Sahoo}{2026}{Hypergraph-Enhanced Lightweight Detection Architecture for Foreign Object Debris Identification on Airport Runways}{Proceedings of the Signal Processing and Communications Engineering (SPACE)}{\textbf{(Accepted)}}
+
+  \resumeItemListEnd
+
+%-----------PROJECTS-----------
+\section{\textbf{Projects}}
+  \resumeSubHeadingListStart
+    \resumeProject
+      {Multimodal Image Super-Resolution using Deep Learning}{2023 -- Present}
+      {Technologies: Python, TensorFlow, PyTorch}
+      \resumeItemListStart
+        \item {Developing novel sparse-enabled model-based deep learning approaches for enhancing image resolution using multiple modalities.}
+      \resumeItemListEnd
+    \resumeProject
+      {IoT-based Smart Monitoring System}{2022 -- 2023}
+      {Technologies: Arduino, Raspberry Pi, MQTT, Node.js}
+      \resumeItemListStart
+        \item {Designed and implemented an IoT-enabled monitoring system for real-time data collection and analysis.}
+      \resumeItemListEnd
+    \resumeProject
+      {Signal Processing for Wireless Communications}{2021 -- 2022}
+      {Technologies: MATLAB, C++}
+      \resumeItemListStart
+        \item {Developed adaptive signal processing algorithms for improving wireless communication performance.}
+      \resumeItemListEnd
+    \resumeProject
+      {Machine Learning for Network Optimization}{2020 -- 2021}
+      {Technologies: Python, scikit-learn, NumPy}
+      \resumeItemListStart
+        \item {Applied machine learning techniques to optimize network resource allocation and improve QoS.}
+      \resumeItemListEnd
+    \resumeProject
+      {Computer Vision for Object Detection}{2019 -- 2020}
+      {Technologies: TensorFlow, OpenCV}
+      \resumeItemListStart
+        \item {Implemented deep learning models for real-time object detection and classification using CNN architectures.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TEACHING EXPERIENCE-----------
+\section{\textbf{Teaching Experience}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Teaching Assistant}{}
+      {National Institute of Technology, Rourkela}{July 2022 -- Present}
+      \resumeItemListStart
+        \item {Course: Advanced Wireless Communications.}
+        \item {Conducted weekly tutorial sessions for 40+ undergraduate students on MIMO, OFDM, and channel coding.}
+        \item {Assisted in developing lab exercises and grading assignments.}
+        \item {Provided one-on-one mentorship to students.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Assistant Professor}{}
+      {Anurag Engineering College (A), Telangana}{Sep 2017 -- July 2022 (4.10 years)}
+      \resumeItemListStart
+        \item {Taught multiple courses in Electronics and Communication Engineering.}
+        \item {Conducted practical laboratory sessions.}
+        \item {Mentored undergraduate students in their projects.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------COURSES TAUGHT-----------
+\section{\textbf{Courses Taught}}
+\begin{itemize}[leftmargin=*,labelsep=1.5mm,topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+  \resumeItem{Theory Courses:}{Basic Electronics Engineering, Digital Electronics, Signals and Systems, Analog Communication, Digital Communication, Digital Signal Processing, Digital Image Processing, Information Theory and Coding, Adaptive Signal Processing, Advanced Digital Signal Processing.}
+  \resumeItem{Practical/Lab Courses:}{AI and ML Laboratory, Basic Electronics Laboratory, Communication Engineering Laboratory, Digital Signal Processing Laboratory, Digital Communication Laboratory, Analog Communication Laboratory, Advanced Digital Signal Processing Laboratory, Adaptive Signal Processing Laboratory.}
+\end{itemize}
+
+%-----------AWARDS AND HONORS-----------
+\section{\textbf{Awards and Honors}}
+  \begin{itemize}[leftmargin=*,labelsep=1.5mm,topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+    \resumeItem{Best Paper Award}{International Conference on Range Technology (ICORT 2025) for the paper ``Performance Analysis of FSO Communication under Foggy Conditions.'' Conducted by Integrated Test Range (ITR) DRDO, Ministry of Defence, Government of India, Chandipur.}
+    \resumeItem{NIT Rourkela Research Fellowship}{Awarded for outstanding academic performance and research potential during PhD studies (2022--Present).}
+  \end{itemize}
+
+%-----------PROFESSIONAL SERVICE & AFFILIATIONS-----------
+\section{\textbf{Professional Service \& Affiliations}}
+  \begin{itemize}[leftmargin=*,labelsep=1.5mm,topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+    \resumeItem{Reviewer}{IEEE International Conference on Acoustics, Speech, and Signal Processing (2025--Present)}
+    \resumeItem{Reviewer}{Elsevier \textit{Ad Hoc Networks} (2023--Present)}
+    \resumeItem{Organizing Committee Member}{National Conference on Advanced Computing and Communication (NCACC 2023), NIT Rourkela (2023)}
+    \resumeItem{Membership}{IEEE Council on RFID and IEEE Sensor Council}
+    \resumeItem{Student Member}{Association for Computing Machinery (ACM)}
+  \end{itemize}
+
+%-----------TECHNICAL SKILLS-----------
+\section{\textbf{Technical Skills}}
+\begin{itemize}[leftmargin=*, label={},topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+  \small{\item{
+    \textbf{Programming Languages:} Python, C/C++, JavaScript \\
+    \textbf{Web Technologies:} HTML5, CSS3, React \\
+    \textbf{ML/AI Frameworks:} TensorFlow, PyTorch, NumPy, scikit-learn, OpenCV \\
+    \textbf{Tools \& Platforms:} MATLAB, Git/GitHub, MySQL, Arduino, Raspberry Pi, MQTT, Node.js \\
+    \textbf{Other Tools:} VS Code, LaTeX, Overleaf \\
+    \textbf{Operating Systems:} Linux, Windows \\
+    \textbf{Areas of Expertise:} Computer Vision, Deep Learning, Image Super-Resolution, Sparse Signal Processing, Model-Based Deep Learning, Image Enhancement, Biomedical Image Processing
+  }}
+\end{itemize}
+
+%-----------CERTIFICATIONS-----------
+\section{\textbf{Certifications}}
+\begin{itemize}[leftmargin=*, label={},topsep=0pt,partopsep=0pt,itemsep=4pt,parsep=0pt]
+  \small{
+    \item \textbf{NIT Rourkela:} Short Course on Computational Engineering with AI/ML (March 16--20, 2026).
+    \item \textbf{IIT Hyderabad:} NCC 2026 - Communications (Feb 26--March 1, 2026).
+    \item \textbf{NIT Rourkela:} Short-Term Course on Radar Signal \& Image Processing (Feb 23--27, 2026).
+    \item \textbf{NIT Rourkela:} Short Course on ACCT-CPS 2026 (January 8--12, 2026). Certificate ID: CT-25-CS-053.
+    \item \textbf{Isha Foundation:} Inner Engineering Program (January 5, 2026). Certificate ID: CERT001380.
+    \item \textbf{NIT Rourkela:} Online Short-Term Course \& Faculty Development Program on Innovation in Control and Learning for Dynamical Systems (ICLDS-2024) (Nov 29--Dec 03, 2024).
+    \item \textbf{NIT Rourkela:} National Workshop on AI for Digital Healthcare Innovations (AIDHI-2024) (October 15--19, 2024). Certificate ID: CT/24/CS/049/031.
+    \item \textbf{NIT Rourkela:} Short-Term Course on Exploring Deep Learning Applications and Practical Implementations (June 11--15, 2024). Certificate ID: NITR/CS/2024/M/0892/0126.
+    \item \textbf{NIT Rourkela:} Short-Term Course on Recent Trends in Computer Vision (December 11--15, 2023). Certificate ID: NITR/CS/2024/M/0149/012.
+    \item \textbf{NIT Rourkela:} Workshop on Shodh Shala on Research Methodology and Data Analysis (March 1--5, 2023).
+    \item \textbf{VIT Chennai:} Advanced Electronic Devices (2023).
+    \item \textbf{NIT Warangal:} Five-Day Short-Term Training Program on ``Data Science for All with R'' (Online Mode) (Feb 22--26, 2023).
+    \item \textbf{NIT Rourkela:} National Conference on Advanced Computing and Communication (NCACC 2023).
+    \item \textbf{Anurag University:} Faculty Development Program on Internet of Things (IoT) (2020).
+    \item \textbf{Gudlavalleru Engineering College:} Electric Vehicle Technologies (June 2020).
+    \item \textbf{CMR Engineering College:} Faculty Development Program on Artificial Intelligence (May 2020).
+    \item \textbf{Narasaraopeta Engineering College:} FDP on OBE -- NBA Process (2020).
+    \item \textbf{NAAC:} Accreditation Framework of NAAC (2020).
+    \item \textbf{Anurag Group of Institutions:} Research to Publication Workshop (2020).
+    \item \textbf{SV College of Engineering:} Career Guidance in VLSI (2020).
+    \item \textbf{MMIT:} NAAC Awareness Program (May 2020).
+    \item \textbf{University of Michigan (Coursera):} HTML5 Programming (2020).
+    \item \textbf{Google (Coursera via Rhyme):} Informative Presentations (2020).
+    \item \textbf{Webinar Certification:} Web Tools for Research (2022).
+    \item \textbf{Anurag University:} Professional Development Certificate (2020).
+    \item \textbf{Swayam:} Computer Fundamentals (November 2019).
+    \item \textbf{Professional Assessment:} Digital Communications Technical Quiz (2020).
+  }
+\end{itemize}
+
+%-----------PROFESSIONAL DEVELOPMENT & SERVICE-----------
+\section{\textbf{Professional Development \& Service}}
+\resumeSubHeadingListStart
+  \resumePOR
+    {Tech. Workshop Coordinator}
+    {``Python for Beginners'' Workshop -- NIT Rourkela}{April 2025}
+    \resumeItemListStart
+      \item Organized and taught a 2-day hands-on lab for 50+ students, covering fundamental Python concepts and practical applications.
+      \item Managed all logistical aspects, from resource allocation to material preparation, ensuring a smooth learning experience.
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------REFERENCES-----------
+\section{\textbf{References}}
+\begin{tabularx}{\textwidth}[t]{@{}X X@{}}
+  \textbf{Prof. Upendra Kumar Sahoo} & \textbf{Prof. Santos Kumar Das} \\
+  Professor, Department of ECE & Professor, Department of ECE \\
+  National Institute of Technology Rourkela & National Institute of Technology Rourkela \\
+  \faEnvelope\ \href{mailto:sahooupen@nitrkl.ac.in}{sahooupen@nitrkl.ac.in} & \faEnvelope\ \href{mailto:dassk@nitrkl.ac.in}{dassk@nitrkl.ac.in} \\
+  \faPhone\ +91-93488 17431 & \faPhone\ +91-94379 40105 \\
+  Relationship: PhD Supervisor & Relationship: PhD Co-Supervisor
+\end{tabularx}
+
+%-----------SIGNATURE AT THE BOTTOM RIGHT-----------
+\vfill
+\begin{flushright}
+\textbf{Kannuru Srinadh} \\
+\end{flushright}
+
+\end{document}
