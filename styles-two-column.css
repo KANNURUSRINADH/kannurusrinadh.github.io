@@ -214,6 +214,9 @@ html {
     height: auto;
     overflow: hidden;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-photo {
@@ -1445,6 +1448,7 @@ footer p:first-child {
         border-radius: 12px !important;
         border: 3px solid var(--gold) !important;
         box-shadow: 0 8px 25px rgba(0, 51, 102, 0.15) !important;
+        margin: 0 auto !important;
     }
 
     .content-header {
