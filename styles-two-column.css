@@ -1426,8 +1426,8 @@ footer p:first-child {
 
     .sidebar-photo-box {
         order: 1 !important;
-        height: 340px !important;
-        max-height: 340px !important;
+        height: 330px !important;
+        max-height: 330px !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
@@ -1436,8 +1436,8 @@ footer p:first-child {
     }
 
     .profile-photo {
-        width: 240px !important;
-        height: 340px !important;
+        width: 260px !important;
+        height: 325px !important;
         max-width: 90% !important;
         object-fit: cover !important;
         object-position: center !important;
