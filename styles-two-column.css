@@ -1131,6 +1131,62 @@ footer p:first-child {
     opacity: 1;
 }
 
+/* Visitor Statistics Counter */
+.visitor-counter-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.visitor-counter-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.75rem !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.visitor-counter-title i {
+    font-size: 1.05rem;
+}
+
+.flag-counter-wrapper {
+    display: inline-block;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 184, 28, 0.45);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.flag-counter-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    border-color: var(--gold);
+}
+
+.flag-counter-wrapper a {
+    display: block;
+    line-height: 0;
+}
+
+.flag-counter-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
 /* ==========================================================================
    RESPONSIVE LAYOUTS (MOBILE & TABLET)
    ========================================================================== */
